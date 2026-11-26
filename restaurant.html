@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Découvrez le restaurant Maktub et son univers gastronomique."
+    >
+
+    <meta name="theme-color" content="#10251d">
+
+    <title>Restaurant — Maktub</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/restaurant.css">
+</head>
+
+<body>
+
+    <header class="restaurant-header">
+        <a href="index.html" class="restaurant-logo">
+            MAKTUB
+        </a>
+
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="#presentation">Le restaurant</a>
+            <a href="#carte">Notre carte</a>
+            <a href="#reservation">Réservation</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="restaurant-hero">
+
+            <img
+                src="images/gallery/restaurant.jpg"
+                alt="Restaurant Maktub"
+            >
+
+            <div class="restaurant-hero-overlay"></div>
+
+            <div class="restaurant-hero-content">
+                <p>UN UNIVERS GASTRONOMIQUE</p>
+
+                <h1>
+                    Le plaisir
+                    <span>de bien manger.</span>
+                </h1>
+
+                <a href="#carte" class="restaurant-button">
+                    Découvrir notre carte
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- PRESENTATION -->
+        <section id="presentation" class="restaurant-intro">
+
+            <p class="restaurant-eyebrow">BIENVENUE À TABLE</p>
+
+            <h2>Un moment de plaisir et de partage</h2>
+
+            <p>
+                Découvrez l'univers gastronomique de Maktub.
+                Un espace dédié à la convivialité et aux plaisirs
+                de la table.
+            </p>
+
+        </section>
+
+
+        <!-- CARTE -->
+        <section id="carte" class="restaurant-menu">
+
+            <div class="restaurant-section-heading">
+
+                <p class="restaurant-eyebrow">L'ART DE LA TABLE</p>
+
+                <h2>Une invitation à la gourmandise</h2>
+
+                <p>
+                    Des entrées aux desserts, découvrez les différentes
+                    catégories qui composent l'univers culinaire de Maktub.
+                </p>
+
+            </div>
+
+            <div class="menu-categories">
+
+                <article class="menu-category">
+                    <img
+                        src="images/gallery/entrees.jpg"
+                        alt="Entrées"
+                    >
+                    <span>01</span>
+                    <h3>Entrées</h3>
+                    <p>
+                        Commencez votre expérience autour de saveurs
+                        délicates et de premières découvertes culinaires.
+                    </p>
+                </article>
+
+                <article class="menu-category">
+                    <img
+                        src="images/gallery/plat.jpg"
+                        alt="Plats principaux"
+                    >
+                    <span>02</span>
+                    <h3>Plats principaux</h3>
+                    <p>
+                        Prenez le temps de savourer les créations
+                        culinaires proposées par notre restaurant.
+                    </p>
+                </article>
+
+                <article class="menu-category">
+                    <img
+                        src="images/gallery/boisson.jpg"
+                        alt="Boissons"
+                    >
+                    <span>03</span>
+                    <h3>Boissons</h3>
+                    <p>
+                        Accompagnez votre repas avec une sélection
+                        de boissons pour prolonger le plaisir.
+                    </p>
+                </article>
+
+                <article class="menu-category">
+                    <img
+                        src="images/gallery/desserts.jpg"
+                        alt="Desserts"
+                    >
+                    <span>04</span>
+                    <h3>Desserts</h3>
+                    <p>
+                        Terminez votre moment à table sur une note
+                        douce et gourmande.
+                    </p>
+                </article>
+
+            </div>
+
+            <p class="menu-notice">
+                Pour découvrir les plats disponibles et leurs tarifs,
+                veuillez contacter notre établissement.
+            </p>
+
+        </section>
+
+
+        <!-- RESERVATION -->
+        <section
+            id="reservation"
+            class="restaurant-reservation"
+        >
+
+            <p class="restaurant-eyebrow">
+                VOTRE TABLE VOUS ATTEND
+            </p>
+
+            <h2>Préparez votre moment chez Maktub</h2>
+
+            <p>
+                Renseignez les informations ci-dessous pour
+                effectuer votre demande de réservation.
+            </p>
+
+            <form id="restaurant-booking-form">
+
+                <div class="reservation-fields">
+
+                    <div class="reservation-field">
+                        <label for="customer-name">
+                            Votre nom
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customer-name"
+                            name="name"
+                            placeholder="Votre nom complet"
+                            required
+                        >
+                    </div>
+
+                    <div class="reservation-field">
+                        <label for="reservation-date">
+                            Date souhaitée
+                        </label>
+
+                        <input
+                            type="date"
+                            id="reservation-date"
+                            name="date"
+                            required
+                        >
+                    </div>
+
+                    <div class="reservation-field">
+                        <label for="reservation-time">
+                            Heure souhaitée
+                        </label>
+
+                        <input
+                            type="time"
+                            id="reservation-time"
+                            name="time"
+                            required
+                        >
+                    </div>
+
+                    <div class="reservation-field">
+                        <label for="guest-count">
+                            Nombre de personnes
+                        </label>
+
+                        <input
+                            type="number"
+                            id="guest-count"
+                            name="guests"
+                            min="1"
+                            step="1"
+                            value="2"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="restaurant-button"
+                >
+                    Envoyer ma demande sur WhatsApp
+                </button>
+
+                <p class="reservation-note">
+                    Votre réservation sera confirmée après
+                    validation par notre établissement.
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="restaurant-footer">
+
+        <a href="index.html">← Retour à Maktub</a>
+
+        <p>© Maktub — Tous droits réservés.</p>
+
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        const bookingForm = document.getElementById(
+            "restaurant-booking-form"
+        );
+
+        const dateInput = document.getElementById(
+            "reservation-date"
+        );
+
+        // Empêcher de choisir une date passée.
+        const today = new Date();
+
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, "0");
+        const day = String(today.getDate()).padStart(2, "0");
+
+        dateInput.min = `${year}-${month}-${day}`;
+
+        bookingForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const name = document.getElementById(
+                "customer-name"
+            ).value.trim();
+
+            const date = dateInput.value;
+
+            const time = document.getElementById(
+                "reservation-time"
+            ).value;
+
+            const guests = document.getElementById(
+                "guest-count"
+            ).value;
+
+            if (!bookingForm.checkValidity()) {
+                bookingForm.reportValidity();
+                return;
+            }
+
+            const message =
+                "Bonjour, je souhaite demander une réservation au restaurant Maktub.\n\n" +
+                "Nom : " + name + "\n" +
+                "Date : " + date + "\n" +
+                "Heure : " + time + "\n" +
+                "Nombre de personnes : " + guests + "\n\n" +
+                "Merci de me confirmer la disponibilité.";
+
+            // Le numéro vient maintenant de js/config.js (contact.whatsapp).
+            const whatsappNumber = String(
+                CONFIG?.contact?.whatsapp || ""
+            ).replace(/\D/g, "");
+
+            if (!whatsappNumber) {
+                alert("Le numéro WhatsApp n'est pas encore configuré.");
+                return;
+            }
+
+            const whatsappURL =
+                "https://wa.me/" + whatsappNumber + "?text=" +
+                encodeURIComponent(message);
+
+            window.open(
+                whatsappURL,
+                "_blank",
+                "noopener,noreferrer"
+            );
+
+        });
+    </script>
+
+</body>
+</html>
