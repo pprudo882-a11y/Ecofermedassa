@@ -1,0 +1,380 @@
+
+/* =================================
+   PAGE RESTAURANT
+================================= */
+
+.restaurant-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 6%;
+
+    background: #10251d;
+    color: white;
+}
+
+.restaurant-logo {
+    color: #c8a65b;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 3px;
+}
+
+.restaurant-header nav {
+    display: flex;
+    gap: 25px;
+}
+
+.restaurant-header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.restaurant-header nav a:hover {
+    color: #c8a65b;
+}
+
+
+/* HERO */
+
+.restaurant-hero {
+    position: relative;
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.restaurant-hero > img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.restaurant-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.58);
+}
+
+.restaurant-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 30px 20px;
+}
+
+.restaurant-hero-content > p {
+    color: #d5b66f;
+    letter-spacing: 4px;
+    font-size: 12px;
+}
+
+.restaurant-hero-content h1 {
+    font-size: clamp(38px, 7vw, 75px);
+    line-height: 1.15;
+    margin: 25px 0;
+}
+
+.restaurant-hero-content h1 span {
+    display: block;
+    color: #d5b66f;
+}
+
+
+/* BOUTONS */
+
+.restaurant-button {
+    display: inline-block;
+    padding: 15px 28px;
+
+    background: #c8a65b;
+    color: #10251d;
+
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+
+    transition: 0.3s;
+}
+
+.restaurant-button:hover {
+    background: white;
+}
+
+
+/* PRESENTATION */
+
+.restaurant-intro {
+    max-width: 850px;
+    margin: auto;
+    padding: 100px 25px;
+    text-align: center;
+}
+
+.restaurant-eyebrow {
+    color: #a88746;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.restaurant-intro h2,
+.restaurant-section-heading h2,
+.restaurant-reservation h2 {
+    color: #10251d;
+    font-size: clamp(28px, 4vw, 42px);
+    margin: 20px 0;
+}
+
+.restaurant-intro > p:last-child,
+.restaurant-section-heading > p:last-child,
+.restaurant-reservation > p:not(.restaurant-eyebrow) {
+    color: #666;
+    line-height: 1.8;
+}
+
+
+/* CARTE */
+
+.restaurant-menu {
+    padding: 90px 6%;
+    background: #f7f5ef;
+}
+
+.restaurant-section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.menu-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1050px;
+    margin: auto;
+}
+
+.menu-category {
+    padding: 35px;
+    background: white;
+    border: 1px solid #e9e3d5;
+    border-radius: 8px;
+}
+
+.menu-category span {
+    color: #a88746;
+    font-size: 13px;
+}
+
+.menu-category h3 {
+    color: #10251d;
+    font-size: 23px;
+    margin: 18px 0 10px;
+}
+
+.menu-category p {
+    color: #777;
+    line-height: 1.7;
+}
+
+.menu-notice {
+    text-align: center;
+    margin-top: 35px;
+    color: #777;
+    font-size: 13px;
+}
+.menu-category img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/* RESERVATION */
+
+.restaurant-reservation {
+    padding: 100px 25px;
+    text-align: center;
+    background: #10251d;
+    color: white;
+}
+
+.restaurant-reservation h2 {
+    color: white;
+}
+
+.restaurant-reservation > p:not(.restaurant-eyebrow) {
+    color: #ddd;
+    max-width: 650px;
+    margin: 20px auto 30px;
+}
+
+
+/* FOOTER */
+
+.restaurant-footer {
+    padding: 30px 20px;
+    text-align: center;
+    background: #0b1b15;
+    color: white;
+}
+
+.restaurant-footer a {
+    color: #d5b66f;
+    text-decoration: none;
+}
+
+.restaurant-footer p {
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .restaurant-header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .restaurant-header nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .restaurant-hero {
+        min-height: 500px;
+    }
+
+    .menu-categories {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.restaurant-booking {
+  margin: 70px auto;
+  padding: 45px 25px;
+  max-width: 850px;
+  text-align: center;
+  background: var(--dark);
+  color: var(--white);
+  border: 1px solid var(--gold);
+  border-radius: 16px;
+}
+
+.restaurant-booking h2 {
+  color: var(--gold);
+  margin: 15px 0;
+}
+
+.restaurant-booking p {
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.restaurant-booking .eyebrow {
+  color: var(--gold);
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+/* =====================================
+   FORMULAIRE DE RÉSERVATION
+===================================== */
+
+.restaurant-reservation {
+    padding: 70px 25px;
+}
+
+#restaurant-booking-form {
+    width: 100%;
+    max-width: 700px;
+    margin: 35px auto 0;
+    text-align: left;
+}
+
+.reservation-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.reservation-field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.reservation-field label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gold);
+}
+
+.reservation-field input {
+    width: 100%;
+    min-width: 0;
+    padding: 15px;
+    border: 1px solid rgba(199, 167, 108, 0.5);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--dark);
+    font: inherit;
+    outline: none;
+}
+
+.reservation-field input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(199, 167, 108, 0.15);
+}
+
+#restaurant-booking-form button {
+    display: block;
+    margin: 30px auto 0;
+    cursor: pointer;
+    border: none;
+}
+
+.reservation-note {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .reservation-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-reservation {
+        padding: 50px 20px;
+    }
+
+    #restaurant-booking-form button {
+        width: 100%;
+    }
+}
+
