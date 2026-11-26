@@ -1,0 +1,2057 @@
+
+/* =========================================
+   MAKTUB — FEUILLE DE STYLE PRINCIPALE
+   Version nettoyée et responsive
+========================================= */
+
+
+/* =========================================
+   1. VARIABLES ET BASE
+========================================= */
+
+:root {
+    --dark: #10251d;
+    --dark-soft: #18372b;
+    --gold: #c7a76c;
+    --cream: #f7f4ed;
+    --white: #ffffff;
+    --text: #343c36;
+    --muted: #8b918b;
+
+    --font-title: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    --container-width: 1400px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 110px 0;
+}
+
+
+/* =========================================
+   2. HEADER ET NAVIGATION
+========================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: rgba(16, 37, 29, 0.95);
+}
+
+.header-container {
+    min-height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    font-family: var(--font-title);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 3px;
+    flex-shrink: 0;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navigation a {
+    color: var(--white);
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: var(--gold);
+}
+
+.header-cta {
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 11px 23px;
+    font-size: 13px;
+    transition: 0.3s;
+    flex-shrink: 0;
+}
+
+.header-cta:hover {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+.menu-toggle {
+    display: none;
+    width: 35px;
+    padding: 5px;
+    background: transparent;
+    border: none;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: 6px 0;
+    background: var(--white);
+    transition: 0.3s;
+}
+
+
+/* =========================================
+   3. HERO
+========================================= */
+
+.hero {
+    position: relative;
+    min-height: 750px;
+    height: 100svh;
+    max-height: 950px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 20px 130px;
+    text-align: center;
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            rgba(10, 28, 20, 0.65),
+            rgba(10, 28, 20, 0.75)
+        ),
+        url("../images/fond.webp");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 850px;
+}
+
+.eyebrow {
+    margin-bottom: 22px;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    margin-bottom: 25px;
+    font-family: var(--font-title);
+    font-size: clamp(45px, 7vw, 88px);
+    font-weight: 500;
+    line-height: 1.15;
+}
+
+.hero h1 span,
+.section-heading h2 span,
+.restaurant-content h2 span,
+.pool-content h2 span,
+.contact-grid h2 span {
+    display: block;
+    color: var(--gold);
+}
+
+.hero-description {
+    max-width: 570px;
+    margin: 0 auto 35px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 28px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+.btn-primary:hover {
+    background: var(--white);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+
+.btn-outline:hover {
+    background: var(--white);
+    color: var(--dark);
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: max-content;
+    max-width: 90%;
+
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+
+/* =========================================
+   4. TITRES DE SECTIONS
+========================================= */
+
+.center {
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+.section-heading {
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.section-subtitle {
+    color: #a88746;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.section-heading h2,
+.restaurant-content h2,
+.pool-content h2,
+.contact-grid h2 {
+    color: var(--dark);
+    font-family: var(--font-title);
+    font-size: clamp(36px, 5vw, 55px);
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.section-heading h2 {
+    margin: 12px 0;
+}
+
+.section-heading p,
+.center > p:last-child {
+    margin-top: 15px;
+    color: var(--muted);
+}
+
+
+/* =========================================
+   5. INTRODUCTION
+========================================= */
+
+.intro {
+    background: var(--cream);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.intro-text p {
+    margin-bottom: 25px;
+    color: #687169;
+    font-size: 16px;
+}
+
+.text-link {
+    padding-bottom: 5px;
+    color: var(--dark);
+    font-weight: 700;
+    border-bottom: 1px solid var(--gold);
+}
+
+
+/* =========================================
+   6. IMAGE DE REMPLACEMENT
+========================================= */
+
+.image-placeholder {
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--dark-soft);
+    color: var(--gold);
+
+    font-family: var(--font-title);
+    font-size: 24px;
+}
+
+.experience-card h3 {
+    margin-bottom: 12px;
+    color: var(--dark);
+    font-family: var(--font-title);
+    font-size: 25px;
+}
+
+.experience-card p {
+    margin-bottom: 20px;
+    color: var(--muted);
+}
+
+
+/* =========================================
+   7. HÉBERGEMENT — CATALOGUE DES CHAMBRES
+========================================= */
+
+.accommodation {
+    padding: 90px 7%;
+    background: #f8f6f0;
+}
+
+
+/* Conteneur général des catégories */
+.rooms-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    width: 100%;
+}
+
+/* Grille des chambres dans chaque catégorie */
+.room-category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+/* Carte de chambre */
+.room-card {
+    width: 100%;
+    min-width: 0;
+}
+
+/* Photo principale */
+.room-card > img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    .room-category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .room-card > img {
+        height: 240px;
+    }
+}
+
+
+/* Chaque catégorie : Standard, Premium, etc. */
+
+.room-category-group {
+    margin-bottom: 65px;
+}
+
+.room-category-heading {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--gold);
+}
+
+.room-category-heading span {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.room-category-heading h3 {
+    margin: 0;
+    color: var(--dark);
+    font-family: var(--font-title);
+    font-size: 30px;
+}
+
+/* Carte individuelle */
+
+.room-card {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.room-card > img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.room-card-content {
+    padding: 22px;
+}
+
+.room-card h3 {
+    margin-bottom: 10px;
+    color: #173c30;
+    font-family: var(--font-title);
+    font-size: 23px;
+}
+
+.room-capacity {
+    color: #777;
+    font-size: 14px;
+}
+
+.room-price {
+    margin: 15px 0;
+    color: #a88746;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.room-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #173c30;
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.room-button:hover {
+    background: #a88746;
+}
+
+/* Détails de la chambre */
+
+.room-detail {
+    margin-top: 45px;
+    padding: 30px;
+    background: var(--white);
+    border: 1px solid #e7e0d2;
+}
+
+.room-detail[hidden] {
+    display: none;
+}
+
+.detail-close {
+    display: block;
+    margin-left: auto;
+    padding: 10px 16px;
+    background: var(--white);
+    color: #173c30;
+    border: 1px solid #173c30;
+    cursor: pointer;
+}
+
+.room-detail h3 {
+    margin: 20px 0;
+    color: #173c30;
+    font-family: var(--font-title);
+    font-size: 30px;
+}
+
+.room-detail h4 {
+    margin: 25px 0 12px;
+    color: var(--dark);
+    font-family: var(--font-title);
+    font-size: 20px;
+}
+
+.room-features {
+    padding-left: 20px;
+    line-height: 2;
+}
+
+
+/* =========================================
+   8. GALERIE DES CHAMBRES
+========================================= */
+
+.room-gallery {
+    width: 100%;
+    margin: 25px 0;
+}
+
+/* Grande photo principale */
+
+.room-main-image {
+    display: block;
+    width: 100%;
+    height: 420px;
+    padding: 0;
+    overflow: hidden;
+
+    background: var(--dark);
+    border: none;
+    border-radius: 10px;
+
+    cursor: zoom-in;
+}
+
+.room-main-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Miniatures */
+
+.room-thumbnails {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    padding: 5px 2px 12px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.room-thumbnail {
+    flex: 0 0 110px;
+    height: 85px;
+    padding: 0;
+    overflow: hidden;
+
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 7px;
+
+    cursor: pointer;
+}
+
+.room-thumbnail img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.room-thumbnail.active {
+    border-color: var(--gold);
+}
+
+/* Fenêtre d'agrandissement */
+
+.room-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.94);
+}
+
+.room-lightbox[hidden] {
+    display: none;
+}
+
+.lightbox-image {
+    display: block;
+    max-width: 80%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    border: none;
+    color: var(--white);
+    background: transparent;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 40px;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    flex-shrink: 0;
+    padding: 10px;
+}
+
+.lightbox-counter {
+    position: absolute;
+    bottom: 15px;
+    color: var(--white);
+    font-size: 14px;
+}
+
+
+/* =========================================
+   9. GALERIE GÉNÉRALE
+========================================= */
+
+.gallery-section {
+    padding: 90px 7%;
+    background: var(--white);
+}
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.filter-button {
+    padding: 11px 20px;
+    background: var(--white);
+    color: #173c30;
+    border: 1px solid #d8c9a7;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-button.active,
+.filter-button:hover {
+    background: #a88746;
+    color: var(--white);
+}
+
+.gallery-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 18px;
+    margin-bottom: 15px;
+}
+
+.gallery-navigation button {
+    width: 38px;
+    height: 38px;
+    background: transparent;
+    color: #a88746;
+    border: 1px solid #a88746;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gallery-navigation button:hover {
+    background: #a88746;
+    color: var(--white);
+}
+
+#gallery-counter {
+    color: #173c30;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.gallery-grid {
+    display: flex;
+    gap: 20px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 10px 2px 20px;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.gallery-item {
+    position: relative;
+    flex: 0 0 350px;
+    height: 260px;
+
+    overflow: hidden;
+    border-radius: 6px;
+    cursor: pointer;
+
+    scroll-snap-align: start;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-grid::-webkit-scrollbar {
+    height: 5px;
+}
+
+.gallery-grid::-webkit-scrollbar-track {
+    background: #eee9df;
+}
+
+.gallery-grid::-webkit-scrollbar-thumb {
+    background: #a88746;
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   10. LIGHTBOX DE LA GALERIE GÉNÉRALE
+========================================= */
+
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.94);
+}
+
+.gallery-lightbox[hidden] {
+    display: none;
+}
+
+.gallery-lightbox img {
+    max-width: 80%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+.lightbox-close,
+.lightbox-arrow {
+    position: absolute;
+    background: transparent;
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.lightbox-arrow {
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 15px;
+}
+
+.lightbox-arrow.previous {
+    left: 20px;
+}
+
+.lightbox-arrow.next {
+    right: 20px;
+}
+
+.lightbox-close {
+    top: 20px;
+    right: 20px;
+    z-index: 2002;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+
+    font-size: 32px;
+}
+
+#lightbox-counter {
+    position: absolute;
+    bottom: 20px;
+    color: var(--white);
+}
+
+
+/* =========================================
+   11. RESTAURANT ET PISCINE
+========================================= */
+
+.restaurant-section {
+    background: var(--dark);
+    color: var(--white);
+}
+
+.restaurant-grid,
+.pool-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.restaurant-visual,
+.pool-visual {
+    min-width: 0;
+}
+
+.restaurant-content,
+.pool-content {
+    min-width: 0;
+}
+
+.restaurant-visual img,
+.pool-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.restaurant-content h2,
+.pool-content h2 {
+    margin-bottom: 25px;
+}
+
+.restaurant-content h2 {
+    color: var(--white);
+}
+
+.restaurant-content > p:not(.eyebrow) {
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================
+   12. PISCINE
+========================================= */
+
+.pool-section {
+    overflow: hidden;
+    background: var(--white);
+}
+
+.pool-content > p:not(.eyebrow) {
+    margin-bottom: 30px;
+    color: #687169;
+}
+
+
+/* =========================================
+   13. EXPÉRIENCES
+========================================= */
+
+.experiences-section {
+    background: var(--cream);
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.experience-card {
+    min-width: 0;
+}
+
+.experience-image {
+    width: 100%;
+    height: 240px;
+    margin-bottom: 22px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.experience-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.experience-card .image-placeholder {
+    min-height: 230px;
+    height: 100%;
+}
+
+.experience-card h3,
+.experience-card p {
+    margin-left: 5px;
+}
+
+
+/* =========================================
+   14. ÉVÉNEMENTS
+========================================= */
+
+.events-section {
+    background: var(--white);
+}
+
+.events-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.events-content .image-placeholder {
+    width: 100%;
+    height: 320px;
+    min-height: 280px;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 8px;
+}
+
+.events-content .image-placeholder img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.events-content h3 {
+    margin-bottom: 15px;
+    color: var(--dark);
+    font-family: var(--font-title);
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.events-content p {
+    margin-bottom: 20px;
+    color: #687169;
+}
+
+.events-types {
+    margin-bottom: 25px;
+    padding-left: 20px;
+    color: var(--dark);
+    line-height: 2;
+}
+
+.events-price {
+    color: #a88746;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   15. RÉSERVATION
+========================================= */
+
+.reservation-section {
+    padding: 90px 7%;
+    background: #f8f6f0;
+    text-align: center;
+    color: var(--dark);
+}
+
+.reservation-section h2 {
+    margin-bottom: 25px;
+    font-family: var(--font-title);
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.reservation-section p:not(.eyebrow) {
+    margin-bottom: 30px;
+}
+
+#reservation-form {
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+
+    background: var(--white);
+    border: 1px solid #e8dfcf;
+    border-radius: 8px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    color: #173c30;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    min-width: 0;
+    padding: 14px;
+
+    background: var(--white);
+    border: 1px solid #ddd5c6;
+    border-radius: 4px;
+
+    font: inherit;
+}
+
+.reservation-dates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.reservation-summary {
+    display: block;
+    min-height: 100px;
+    margin: 25px 0;
+    padding: 22px;
+
+    background: #f8f6f0;
+    color: #173c30;
+    border: 2px solid #a88746;
+}
+
+.reservation-summary p {
+    margin-bottom: 10px;
+}
+
+.reservation-summary small {
+    display: block;
+    margin-top: 12px;
+    color: #777;
+    line-height: 1.5;
+}
+
+.reservation-submit {
+    width: 100%;
+    padding: 16px;
+
+    background: #173c30;
+    color: var(--white);
+    border: none;
+
+    cursor: pointer;
+    font: inherit;
+    transition: 0.3s;
+}
+
+.reservation-submit:hover {
+    background: #a88746;
+}
+
+#reservation-message {
+    margin-top: 15px;
+    color: #a34b35;
+}
+
+
+/* =========================================
+   16. CONTACT
+========================================= */
+
+.contact-section {
+    background: var(--white);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.contact-grid h2 {
+    margin-bottom: 20px;
+}
+
+.contact-grid > div:first-child > p:last-child {
+    color: var(--muted);
+}
+
+.contact-info {
+    padding: 40px;
+    background: var(--cream);
+}
+
+.contact-info p {
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   17. FOOTER
+========================================= */
+
+.footer {
+    padding: 50px 0;
+    background: #0b1b14;
+    color: var(--white);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 13px;
+}
+
+.copyright {
+    font-size: 11px !important;
+}
+
+
+/* =========================================
+   18. TABLETTES
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .navigation {
+        gap: 15px;
+    }
+
+    .navigation a {
+        font-size: 11px;
+    }
+
+    .header-cta {
+        padding: 9px 15px;
+    }
+
+    .restaurant-grid,
+    .pool-grid {
+        gap: 40px;
+    }
+
+}
+
+
+/* =========================================
+   19. MOBILES ET PETITS ÉCRANS
+========================================= */
+
+@media (max-width: 768px) {
+
+    .section-padding {
+        padding: 75px 0;
+    }
+
+    /* HEADER */
+
+    .header-container {
+        min-height: 75px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .header-cta {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 1002;
+    }
+
+    .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+
+        padding: 15px 0 25px;
+        background: var(--dark);
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+
+    .navigation a {
+        display: block;
+        width: 100%;
+        padding: 13px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        height: auto;
+        min-height: 750px;
+        max-height: none;
+        padding: 100px 20px 120px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 11vw, 65px);
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-actions {
+        gap: 12px;
+    }
+
+    .hero-scroll {
+        bottom: 20px;
+        font-size: 9px;
+    }
+
+
+    /* GRILLES */
+
+    .intro-grid,
+    .restaurant-grid,
+    .pool-grid,
+    .events-content,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .experience-image {
+        height: 260px;
+    }
+
+    .events-content .image-placeholder {
+        height: 260px;
+    }
+
+
+    /* CHAMBRES */
+
+    .accommodation {
+        padding: 65px 5%;
+    }
+
+    .room-category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .room-category-heading h3 {
+        font-size: 25px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .room-detail {
+        padding: 18px;
+    }
+
+    .room-main-image {
+        height: 280px;
+    }
+
+    .room-thumbnail {
+        flex-basis: 85px;
+        height: 70px;
+    }
+
+    .room-lightbox {
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .lightbox-image {
+        max-width: 75%;
+        max-height: 65vh;
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 28px;
+    }
+
+
+    /* GALERIE GÉNÉRALE */
+
+    .gallery-section {
+        padding: 65px 5%;
+    }
+
+    .gallery-grid {
+        gap: 12px;
+    }
+
+    .gallery-item {
+        flex: 0 0 82%;
+        height: 220px;
+    }
+
+    .gallery-lightbox img {
+        max-width: 90%;
+    }
+
+
+    /* RÉSERVATION */
+
+    .reservation-section {
+        padding: 65px 5%;
+    }
+
+    #reservation-form {
+        padding: 22px;
+    }
+
+    .reservation-dates {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================
+   20. TRÈS PETITS TÉLÉPHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .hero {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        text-align: center;
+    }
+
+    .gallery-item {
+        flex-basis: 90%;
+    }
+
+}
+
+/* =====================================
+   CATÉGORIES DE CHAMBRES
+===================================== */
+
+.room-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    width: 100%;
+    align-items: start;
+}
+
+.room-category-group {
+    min-width: 0;
+    width: 100%;
+}
+
+.room-category-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.room-card > img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Téléphone */
+@media (max-width: 768px) {
+    .room-categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .room-card > img {
+        height: 240px;
+    }
+}
+
+/* =====================================
+   GALERIE PISCINE
+===================================== */
+
+.pool-header {
+    max-width: 700px;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.pool-header h2 {
+    margin-bottom: 15px;
+}
+
+.pool-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 100%;
+}
+
+.pool-main-image {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.pool-main-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.pool-main-image:hover img {
+    transform: scale(1.04);
+}
+
+.pool-footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Téléphone */
+@media (max-width: 768px) {
+    .pool-main-image {
+        height: 280px;
+    }
+}
+
+/* =====================================
+   FENÊTRE GALERIE PISCINE
+===================================== */
+
+.pool-lightbox[hidden] {
+    display: none;
+}
+
+.pool-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.94);
+}
+
+.pool-lightbox-content {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.pool-lightbox-image {
+    display: block;
+    width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.pool-lightbox-counter {
+    margin-top: 15px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.pool-lightbox-close,
+.pool-lightbox-prev,
+.pool-lightbox-next {
+    position: absolute;
+    border: none;
+    background: rgba(199, 167, 108, 0.9);
+    color: #10251d;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pool-lightbox-close {
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+}
+
+.pool-lightbox-prev,
+.pool-lightbox-next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    font-size: 32px;
+}
+
+.pool-lightbox-prev {
+    left: 20px;
+}
+
+.pool-lightbox-next {
+    right: 20px;
+}
+
+.pool-lightbox button[hidden] {
+    display: none;
+}
+
+/* Adaptation mobile */
+
+@media (max-width: 768px) {
+
+    .pool-lightbox {
+        padding: 15px;
+    }
+
+    .pool-lightbox-image {
+        max-height: 65vh;
+    }
+
+    .pool-lightbox-prev {
+        left: 8px;
+    }
+
+    .pool-lightbox-next {
+        right: 8px;
+    }
+
+    .pool-lightbox-prev,
+    .pool-lightbox-next {
+        width: 36px;
+        height: 36px;
+        font-size: 25px;
+    }
+
+    .pool-lightbox-close {
+        top: 12px;
+        right: 12px;
+        width: 38px;
+        height: 38px;
+    }
+
+}
+
+#rooms-container[hidden] {
+  display: none !important;
+}
+
+.room-categories-intro {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.room-category-card {
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--white);
+}
+
+.room-category-card img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.room-category-card-content {
+  padding: 20px;
+}
+
+.room-discover-action {
+  display: flex;
+  justify-content: center;
+  margin: 35px 0;
+}
+
+@media (max-width: 600px) {
+  .room-categories-intro {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.location-map {
+  width: 100%;
+  min-height: 400px;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--gold);
+}
+
+.location-map iframe {
+  display: block;
+  width: 100%;
+  min-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location-map,
+  .location-map iframe {
+    min-height: 320px;
+  }
+}
+
+.gallery-lightbox-caption {
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    margin: 12px 0;
+    padding: 0 15px;
+    line-height: 1.5;
+}
+
+/* =====================================
+   AVIS DES VISITEURS — MAKTUB
+===================================== */
+
+.reviews-section {
+  background: #10251d;
+  color: #f8f3e8;
+}
+
+.reviews-heading {
+  max-width: 650px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.reviews-heading h2 {
+  font-family: inherit;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 12px 0;
+  line-height: 1.2;
+}
+
+.reviews-heading h2 span {
+  color: #c7a76c;
+}
+
+.reviews-heading > p:last-child {
+  color: rgba(248, 243, 232, 0.75);
+  line-height: 1.7;
+}
+
+.reviews-platforms {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.review-platform {
+  padding: 30px 24px;
+  text-align: center;
+  background: #18372b;
+  border: 1px solid rgba(199, 167, 108, 0.3);
+  border-radius: 12px;
+  transition: transform 0.3s ease,
+              border-color 0.3s ease;
+}
+
+.review-platform:hover {
+  transform: translateY(-5px);
+  border-color: #c7a76c;
+}
+
+.review-platform h3 {
+  color: #f8f3e8;
+  font-size: 1.25rem;
+  margin-bottom: 18px;
+}
+
+.review-rating {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0 0 10px;
+}
+
+.review-rating strong {
+  color: #c7a76c;
+  font-size: 2rem;
+}
+
+.review-rating span {
+  color: #e4bd70;
+  letter-spacing: 3px;
+}
+
+.review-platform > p:not(.review-rating) {
+  color: rgba(248, 243, 232, 0.7);
+  margin-bottom: 22px;
+}
+
+.review-link {
+  display: inline-block;
+  padding: 11px 18px;
+  color: #10251d;
+  background: #c7a76c;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.review-link:hover {
+  background: #e2c58e;
+}
+
+@media (max-width: 768px) {
+  .reviews-platforms {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .review-platform {
+    padding: 25px 20px;
+  }
+}
+
+/* =====================================
+   FORMULAIRE D'AVIS — MAKTUB
+===================================== */
+
+.review-form-wrapper {
+  max-width: 700px;
+  margin: 65px auto 0;
+  padding: 35px;
+  background: #18372b;
+  border: 1px solid rgba(199, 167, 108, 0.3);
+  border-radius: 12px;
+}
+
+.review-form-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.review-form-heading h3 {
+  color: #f8f3e8;
+  font-size: 1.7rem;
+  margin: 12px 0;
+}
+
+.review-form-heading > p:last-child {
+  color: rgba(248, 243, 232, 0.7);
+  line-height: 1.6;
+}
+
+.review-form-group {
+  margin-bottom: 22px;
+}
+
+.review-form-group label {
+  display: block;
+  color: #f8f3e8;
+  margin-bottom: 9px;
+  font-weight: 600;
+}
+
+.review-form-group input,
+.review-form-group select,
+.review-form-group textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid rgba(199, 167, 108, 0.35);
+  border-radius: 6px;
+  background: #10251d;
+  color: #f8f3e8;
+  font: inherit;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.review-form-group input:focus,
+.review-form-group select:focus,
+.review-form-group textarea:focus {
+  border-color: #c7a76c;
+}
+
+.review-form-group textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.review-form-group input::placeholder,
+.review-form-group textarea::placeholder {
+  color: rgba(248, 243, 232, 0.45);
+}
+
+.review-form-wrapper button {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  font: inherit;
+}
+
+.review-form-note {
+  margin-top: 16px;
+  text-align: center;
+  color: rgba(248, 243, 232, 0.6);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .review-form-wrapper {
+    padding: 24px 18px;
+    margin-top: 45px;
+  }
+
+  .review-form-heading h3 {
+    font-size: 1.4rem;
+  }
+}
+/* =====================================
+   AVIS CLIENTS APPROUVÉS
+===================================== */
+
+.approved-reviews-section {
+    margin-top: 60px;
+}
+
+.approved-reviews-section>h3 {
+    color: #c7a76c;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 25px;
+}
+
+#approved-reviews {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.approved-review {
+    background: #18372b;
+    border: 1px solid rgba(199, 167, 108, 0.25);
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.approved-review h4 {
+    color: #f5e8ce;
+    margin-bottom: 10px;
+}
+
+.approved-review-stars {
+    color: #c7a76c;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.approved-review>p:last-child {
+    color: #e8e1d5;
+    line-height: 1.7;
+}
+
+.reviews-empty {
+    color: #d5c9b5;
+    font-style: italic;
+}
+
+/* =========================================
+   LÉGENDES DES PHOTOS (galerie)
+========================================= */
+
+.gallery-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 28px 14px 12px;
+
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0)
+    );
+
+    pointer-events: none;
+}
+
+.gallery-lightbox-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 55px;
+
+    padding: 0 20px;
+
+    color: var(--white);
+    font-size: 16px;
+    text-align: center;
+}
